@@ -1,0 +1,32 @@
+body {
+  box-sizing: border-box;  
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu-container {
+    display: flex;
+}
+
+/* .menu-column div {
+    padding: 4px 10px;
+} */
+
+.menu-label {
+    background-color: green;
+    font-size: 1.5rem;
+    padding: 4px 10px;
+}
+
+.menu-label:hover {
+    background-color: yellowgreen;
+}
+
+.menu-option {
+    background-color: lightgrey;
+    font-size: 1.2rem;
+    padding: 4px 10px;
+}
+
+.menu-option:hover {
+    background-color: darkcyan;
+}
