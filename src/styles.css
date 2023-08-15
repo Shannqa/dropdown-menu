@@ -7,37 +7,47 @@ body {
     display: flex;
 }
 
-/* .menu-column div {
-    padding: 4px 10px;
-} */
-
 .menu-label {
     background-color: green;
     font-size: 1.5rem;
     padding: 4px 10px;
-    cursor: pointer;
+    display: block;
+    color: black;
+    text-decoration: none;
 }
 
 .menu-label:hover {
     background-color: yellowgreen;
 }
 
+.menu-label:active {
+    background-color: orange;
+}
+
 .menu-options {
-    scale: 0;
-    transition: scale, 200ms, ease-in-out;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 100ms ease-in-out;
+    display: flex;
+    flex-direction: column;
 }
 
 .menu-visible {
-    scale: 1;
+    transform: scaleY(1);
 }
 
 .menu-option {
     background-color: lightgrey;
+    color: black;
+    text-decoration: none;
     font-size: 1.2rem;
     padding: 4px 10px;
-    cursor: pointer;
 }
 
 .menu-option:hover {
     background-color: darkcyan;
+}
+
+.menu-option:active {
+    background-color: orangered;
 }
