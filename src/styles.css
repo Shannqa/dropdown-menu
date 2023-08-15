@@ -15,16 +15,27 @@ body {
     background-color: green;
     font-size: 1.5rem;
     padding: 4px 10px;
+    cursor: pointer;
 }
 
 .menu-label:hover {
     background-color: yellowgreen;
 }
 
+.menu-options {
+    scale: 0;
+    transition: scale, 200ms, ease-in-out;
+}
+
+.menu-visible {
+    scale: 1;
+}
+
 .menu-option {
     background-color: lightgrey;
     font-size: 1.2rem;
     padding: 4px 10px;
+    cursor: pointer;
 }
 
 .menu-option:hover {

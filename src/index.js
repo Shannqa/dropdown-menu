@@ -2,13 +2,13 @@
   
   function createMenu() {
     const menuItems = [
-        { label: "One" },
-        { label: "Two" },
-        { type: "group", label: "Three", options: [
+        { ID: "1", label: "One" },
+        { ID: "2", label: "Two" },
+        { ID: "3", type: "group", label: "Three", options: [
             { label: "Three-one"},
             { label: "Three-two"},
         ]},
-        { type: "group", label: "Four", options: [
+        { ID: "4", type: "group", label: "Four", options: [
             { label: "Four-one"},
             { label: "Four-two" },
             { label: "Four-three"},
@@ -22,18 +22,32 @@
     menuItems.forEach((item) => {
       const columnDiv = document.createElement("div");
       container.appendChild(columnDiv);
-      const labelDiv = document.createElement("div");
-      labelDiv.classList.add("menu-label");
-      labelDiv.textContent = item.label;
-      columnDiv.appendChild(labelDiv);
-      
+      const label = document.createElement("div");
+      label.classList.add("menu-label");
+      label.textContent = item.label;
+      columnDiv.appendChild(label);
+            
       if (item.type === "group") {
-        item.options.forEach((option) => {
-          const optionDiv = document.createElement("div");
-          optionDiv.classList.add("menu-option");
-          optionDiv.textContent = option.label;
-          columnDiv.appendChild(optionDiv);
+        label.addEventListener("mouseover", () => {
+          let IDoptions = document.querySelector(`.menu-id-${item.ID}`);
+          IDoptions.classList.add("menu-visible");
         });
+        columnDiv.addEventListener("mouseleave", () => {
+        let IDoptions = document.querySelector(`.menu-id-${item.ID}`);
+        IDoptions.classList.remove("menu-visible");
+      });
+        const optionsDiv = document.createElement("div");
+        optionsDiv.classList.add("menu-options", `menu-id-${item.ID}`);
+        item.options.forEach((option) => {
+          const optionLabel = document.createElement("div");
+          optionLabel.classList.add("menu-option");
+          optionLabel.textContent = option.label;
+          optionLabel.addEventListener("click", () => {
+
+          })
+          optionsDiv.appendChild(optionLabel);
+        });
+        columnDiv.appendChild(optionsDiv)
       }
     });
     body.appendChild(container);
