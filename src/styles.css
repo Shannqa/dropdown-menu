@@ -14,6 +14,8 @@ body {
     display: block;
     color: black;
     text-decoration: none;
+    position: relative;
+    cursor: pointer;
 }
 
 .menu-label:hover {
@@ -27,9 +29,10 @@ body {
 .menu-options {
     transform: scaleY(0);
     transform-origin: top;
-    transition: transform 100ms ease-in-out;
+    transition: transform 150ms ease-in-out;
     display: flex;
     flex-direction: column;
+    position: absolute;
 }
 
 .menu-visible {
