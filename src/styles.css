@@ -83,8 +83,6 @@ body {
         display: flex;
     }
 
-
-
     .menu-options {
         transform: none;
         position: initial;
@@ -100,5 +98,8 @@ body {
     .mobile-visible {
         display: flex;
     }
-
+    .menu-label {
+        display: flex;
+        justify-content: space-between;
+    }
 }

@@ -1,6 +1,7 @@
   import css from './styles.css';
-  import menuHamb from './menu_hamb.svg'
-
+  import menuHamb from './menu_hamb.svg';
+  import expandM from './expand_more.svg';
+  import expandL from './expand_less.svg';
   
   function createMenu() {
     const menuItems = [
@@ -39,16 +40,27 @@
       const columnDiv = document.createElement("div");
       columnDiv.classList.add("menu-column");
       container.appendChild(columnDiv);
-      const label = document.createElement("a");
-      label.classList.add("menu-label");
-      label.textContent = item.label;
+      const labelA = document.createElement("a");
+      labelA.classList.add("menu-label");
+
+      const label = document.createElement("span");
+       label.textContent = item.label;
+      labelA.appendChild(label);
+      
       if (item.url) {
+        //if the menu item has one page link  
         label.setAttribute("href", `${item.url}`);
+      } else {
+        //if the menu item expands and links to multiple pages
+        const expandMore = new Image();
+        expandMore.src = expandM;
+        labelA.appendChild(expandMore);
       }
-      columnDiv.appendChild(label);
-            
+      columnDiv.appendChild(labelA);
+
+          
       if (item.type === "group") { 
-        label.addEventListener("mouseover", () => {
+        labelA.addEventListener("mouseover", () => {
           let IDoptions = document.querySelector(`.menu-id-${item.ID}`);
           IDoptions.classList.add("menu-visible");
         });
@@ -56,8 +68,7 @@
         let IDoptions = document.querySelector(`.menu-id-${item.ID}`);
         IDoptions.classList.remove("menu-visible");
       });
-
-      label.addEventListener("click", () => {
+      labelA.addEventListener("click", () => {
         let IDoptions = document.querySelector(`.menu-id-${item.ID}`);
         IDoptions.classList.toggle("mobile-visible");
       });
