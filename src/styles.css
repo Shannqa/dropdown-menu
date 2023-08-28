@@ -1,10 +1,17 @@
 body {
   box-sizing: border-box;  
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
 .menu-container {
+    background-color: green;
     display: flex;
+    width: 100vw;
+}
+
+.menu-hamburger {
+    display: none;
 }
 
 .menu-label {
@@ -53,4 +60,45 @@ body {
 
 .menu-option:active {
     background-color: orangered;
+}
+
+/* Media Queries */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .menu-container {
+    flex-direction: column;
+    }
+    .menu-hamburger {
+        display: block;
+    }
+
+    .menu-column {
+        display: none;
+        flex-direction: column;
+        border-bottom: 2px solid black;
+    }
+
+    .visible {
+        display: flex;
+    }
+
+
+
+    .menu-options {
+        transform: none;
+        position: initial;
+        display: none;
+        flex-direction: column;
+
+    }
+    .menu-visible {
+        display: none;
+        transform: none;
+    }
+
+    .mobile-visible {
+        display: flex;
+    }
+
 }
