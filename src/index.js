@@ -54,6 +54,7 @@
         //if the menu item expands and links to multiple pages
         const expandMore = new Image();
         expandMore.src = expandM;
+        expandMore.classList.add("expand-icon");
         labelA.appendChild(expandMore);
       }
       columnDiv.appendChild(labelA);

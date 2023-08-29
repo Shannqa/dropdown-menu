@@ -1,8 +1,11 @@
 {
-  "name": "dropdown-menu",
+  "name": "@shannqa/dropdown-menu",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Package adding a simple dropdown menu. The menu is adjusted to mobile view as well.",
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
@@ -25,5 +28,14 @@
   },
   "dependencies": {
     "lodash": "^4.17.21"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shannqa/dropdown-menu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Shannqa/dropdown-menu/issues"
+  },
+  "homepage": "https://github.com/Shannqa/dropdown-menu#readme",
+  "main": "webpack.config.js"
 }

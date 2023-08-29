@@ -62,6 +62,10 @@ body {
     background-color: orangered;
 }
 
+.expand-icon {
+    display: none;
+}
+
 /* Media Queries */
 
 /* Extra small devices (phones, 600px and down) */
